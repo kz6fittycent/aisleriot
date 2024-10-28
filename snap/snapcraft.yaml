@@ -52,6 +52,7 @@ parts:
       - libgc1
       - libmd4c0
       - libproxy1v5
+      - libgio-qt0
             
     override-pull: |
       craftctl default
