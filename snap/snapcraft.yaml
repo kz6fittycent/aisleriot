@@ -51,6 +51,7 @@ parts:
       - libdouble-conversion3
       - libgc1
       - libmd4c0
+      - libproxy1v5
             
     override-pull: |
       craftctl default
