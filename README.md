@@ -1,3 +1,5 @@
+[![🧪 Snap Builds](https://github.com/kz6fittycent/aisleriot/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/kz6fittycent/aisleriot/actions/workflows/test-snap-can-build.yml)
+
 # Aisleriot
 
 Aisleriot — also known as sol or solitaire — is a card game
