@@ -23,6 +23,7 @@ platforms:
 apps:
   aisleriot:
     command: usr/bin/sol
+    desktop: meta/local/aisleriot.desktop
     extensions:
       - gnome
       
@@ -46,6 +47,7 @@ parts:
     stage-packages:
       - libqt5svg5
       - libqt5core5a
+      - guile-3.0
       - guile-3.0-libs
       - libqt5widgets5
       - libdouble-conversion3
