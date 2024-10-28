@@ -1,0 +1,57 @@
+name: aisleriot
+title: Aisleriot
+adopt-info: aisleriot
+summary: Aisleriot — also known as sol or solitaire
+description: |  
+  Aisleriot — also known as sol or solitaire — is a card game application that features over 80 different solitaire-type card games which are designed to play using a mouse, keyboard, or trackpad.
+
+license: CC0-1.0
+base: core24
+grade: stable
+confinement: strict
+compression: lzo
+icon: snap/local/aisleriot.png
+contact: https://github.com/kz6fittycent/aisleriot
+issues: https://github.com/kz6fittycent/aisleriot/issues
+source-code: https://gitlab.gnome.org/GNOME/aisleriot
+
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+    
+apps:
+  aisleriot:
+    command: usr/bin/sol
+    extensions:
+      - gnome
+      
+parts:
+  aisleriot:
+    source: https://gitlab.gnome.org/GNOME/aisleriot
+    source-type: git
+    plugin: meson
+    meson-parameters:
+      - --prefix=/usr
+    
+    build-packages:
+      - cmake
+      - guile-3.0-dev
+      - guile-3.0-libs
+      - qt5-qmake-bin
+      - build-essential
+      - qtbase5-dev
+      - libqt5svg5-dev
+    
+    stage-packages:
+      - libqt5svg5
+      - libqt5core5a
+      - guile-3.0-libs
+      - libqt5widgets5
+      - libdouble-conversion3
+      - libgc1
+      - libmd4c0
+            
+    override-pull: |
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"      
